@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <!-- name can be anything like abc or xyz -->
+        <context:property-placeholder location="application.properties"/>
+        <bean name="employeeRepository" 
+        class="com.thilandanidu.training.salesmanager.repository.HibernateEmployeeRepositoryImpl"/>
+        
+        <bean name="employeeService" 
+        class="com.thilandanidu.training.salesmanager.service.EmployeeServiceImpl" autowire="byType" scope="singleton">
+        <!--        <property name="employeeRepository" ref="employeeRespository"/>-->
+		<!--        <constructor-arg index="0" ref="employeeRespository" name=""/>-->
+        
+        </bean>
+</beans>
